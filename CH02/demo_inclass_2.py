@@ -157,7 +157,7 @@ print(z)
 
 # TODO: Concatenate two strings and print the result
 
-# TASK! Create two strings, first_name, and last_name
+# TODO: TASK! Create two strings, first_name, and last_name
 # concatenate them together into full_name and then print it
 # What did you notice about its formatting? How could
 # you improve the formatting?
@@ -174,7 +174,7 @@ print(z)
 # - end= (line ending)
 # TODO: Use end= to prevent a newline
 
-# TASK! Print three words on the same line using 3 different
+# TODO: TASK! Print three words on the same line using 3 different
 # print statements
 # try to use a different end line string for each
 
@@ -194,7 +194,7 @@ print(z)
 
 # TODO: Print text using a newline and a tab
 
-# TASK! Print your first and last name on two separate lines
+# TODO: TASK! Print your first and last name on two separate lines
 # with a single print statement
 
 
@@ -206,7 +206,7 @@ print(z)
 
 # TODO: Print a number rounded to two decimals
 
-# TASK! Write out as many digits of pi as you know
+# TODO: TASK! Write out as many digits of pi as you know
 # then print out that pi variable with 1 decimal point
 # make sure to have the print out label the number
 
@@ -234,7 +234,7 @@ print(z)
 # TODO: Ask the user for their age (integer)
 # TODO: Ask the user for their score (float)
 
-# TASK! Write a small program which calculates the
+# TODO: TASK! Write a small program which calculates the
 # total pay of a user. Assume the user knows how many
 # hours they worked and what their hourly pay is.
 
@@ -268,7 +268,7 @@ print(z)
 # much of your code will be self-explanatory and will not
 # require heavy commenting.
 
-# TASK: read through this code and understand what each line of code is doing
+# TODO TASK: read through this code and understand what each line of code is doing
 # then try to add 1 to 2 comments to make it a bit easier to understand
 
 # ANNUAL_INTEREST_RATE = 0.045   # 4.5% annual interest
