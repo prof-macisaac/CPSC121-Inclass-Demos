@@ -129,11 +129,21 @@ print(temperature)
 # Math expressions combine:
 # - Operators (+, -, *, /, //, %, **)
 # - Operands (numbers or variables)
-x=10
+x = 10
 y = 3
 print(x + 100)
 z = y - x
 print(z)
+
+print(type(x / y))
+print(x % y)
+
+print(17 % 5)
+
+print(3 % 2)
+print(4 % 2)
+
+print(2 ** 3)
 
 # TODO: Demonstrate each arithmetic operator
 
@@ -149,20 +159,30 @@ print(z)
 
 # TODO: Show how parentheses change the result
 
-
+x = 10 * (5 + 1)
+print(x)
 # ======================================================
 # String Concatenation
 # ======================================================
 # Strings can be joined together using the + operator.
 
 # TODO: Concatenate two strings and print the result
+greetings = "hello" + "goodbye"
+print(greetings)
+
+x = "1"
+y = "2"
+print(x + y)
 
 # TODO: TASK! Create two strings, first_name, and last_name
 # concatenate them together into full_name and then print it
 # What did you notice about its formatting? How could
 # you improve the formatting?
+first_name = "Dom"
+last_name = "MacIsaac"
+full_name = first_name + " " +  last_name
 
-
+print(full_name)
 # ======================================================
 # More About print()
 # ======================================================
@@ -174,41 +194,63 @@ print(z)
 # - end= (line ending)
 # TODO: Use end= to prevent a newline
 
+print("hello", end = "...")
+print("goodbye", end = "!!!")
+
+print()
+print("hello")
+print("goodbye")
 # TODO: TASK! Print three words on the same line using 3 different
 # print statements
-# try to use a different end line string for each
 
+# try to use a different end line string for each
+print("Programming", end="")
+print("is", end = "hello this is a string!!")
+print("fun!")
 
 # print multiple things in a single statement be separating
 # arguments with commas
 # print(item1, item2, item3)
 # each item will be printed with a space in between them
+is_str = "is"
+print("Programming", is_str, "fun!")
 
-
-# ======================================================
+# ==================================================
 # Escape Characters
-# ======================================================
+#===================================================
 # Escape characters start with a backslash:
 # \n → newline
 # \t → tab
 
 # TODO: Print text using a newline and a tab
 
+print("hello\tgoodbye\nhi")
 # TODO: TASK! Print your first and last name on two separate lines
 # with a single print statement
 
-
+print(first_name+"\n"+last_name)
 # ======================================================
 # Formatted Output with f-strings
 # ======================================================
 # f-strings allow us to embed variables inside strings.
 # Format specifiers control how values appear.
 
+f_str = f"hello, my name is {first_name} {last_name}"
+print(f_str)
+
 # TODO: Print a number rounded to two decimals
+x = 10/3
+print(x)
+print(f"x is {x:.2f}")
 
 # TODO: TASK! Write out as many digits of pi as you know
 # then print out that pi variable with 1 decimal point
 # make sure to have the print out label the number
+pi = 3.191592
+x = 3
+# print(round(pi, x))
+print(f"pi is {pi:.1f}")
+
 
 # ======================================================
 # Reading Input from the Keyboard
@@ -219,7 +261,10 @@ print(z)
 # - Always returns a STRING
 
 # TODO: Ask the user for their name and store it in a variable
+user_name = input("What is your name? ")
+print(user_name)
 # TODO: Print a greeting using that name
+
 
 
 # ======================================================
@@ -232,6 +277,10 @@ print(z)
 # float() → converts to floating-point number
 
 # TODO: Ask the user for their age (integer)
+age = int(input("How old are you? "))
+# age = int(age)
+print(age + 1 )
+
 # TODO: Ask the user for their score (float)
 
 # TODO: TASK! Write a small program which calculates the

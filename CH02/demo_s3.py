@@ -129,11 +129,16 @@ print(temperature)
 # Math expressions combine:
 # - Operators (+, -, *, /, //, %, **)
 # - Operands (numbers or variables)
-x=10
+x = 10
 y = 3
 print(x + 100)
 z = y - x
 print(z)
+print(type(x/y))
+
+print(x % y)
+
+print(17 % 5)
 
 # TODO: Demonstrate each arithmetic operator
 
@@ -147,7 +152,7 @@ print(z)
 # 4. Addition / Subtraction
 
 # TODO: Show how parentheses change the result
-
+print(10 * (5 + 1))
 
 # ======================================================
 # String Concatenation
@@ -156,11 +161,20 @@ print(z)
 
 # TODO: Concatenate two strings and print the result
 
+x = "hello" + "goodbye" + "hi"
+print(x)
+
+y = "1"
+z = "2"
+print(y + z)
 # TODO: TASK! Create two strings, first_name, and last_name
 # concatenate them together into full_name and then print it
 # What did you notice about its formatting? How could
 # you improve the formatting?
-
+fst_n = "Dominic"
+lst_n = "MacIsaac"
+fll_n = fst_n + " " + lst_n
+print(fll_n)
 
 # ======================================================
 # More About print()
@@ -172,17 +186,21 @@ print(z)
 # These can be changed using:
 # - end= (line ending)
 # TODO: Use end= to prevent a newline
-
+print("cold", end = "...")
+print("hot")
 # TODO: TASK! Print three words on the same line using 3 different
 # print statements
 # try to use a different end line string for each
-
+print("Programming", end = "\n")
+print("is", end = "\n")
+print("fun!")
 
 # print multiple things in a single statement be separating
 # arguments with commas
 # print(item1, item2, item3)
 # each item will be printed with a space in between them
-
+x = 39
+print(x, "thirty-nine", "!!!!")
 
 # ======================================================
 # Escape Characters
@@ -192,23 +210,31 @@ print(z)
 # \t → tab
 
 # TODO: Print text using a newline and a tab
-
-# TODO: TASK! Print your first and last name on two separate lines
-# with a single print statement
-
+# x = "hello\n\n\ngood\thi"
+# print(x)
+# x = "hello\n\n\ngoodbye\thi"
+# print(x)
+# # TODO: TASK! Print your first and last name on two separate lines
+# # with a single print statement
+# print("Dominic\nMacIsaac")
 
 # ======================================================
 # Formatted Output with f-strings
 # ======================================================
 # f-strings allow us to embed variables inside strings.
 # Format specifiers control how values appear.
-
+age = 25
+f_str = f"you are {age + 1}"
+print(f_str)
 # TODO: Print a number rounded to two decimals
 
+x = 10/3
+print(f"the answer is {999999876.99999:.2f}")
 # TODO: TASK! Write out as many digits of pi as you know
 # then print out that pi variable with 1 decimal point
 # make sure to have the print out label the number
-
+pi = 3.141592653
+print(f"pi is {pi:.1f}")
 # ======================================================
 # Reading Input from the Keyboard
 # ======================================================
@@ -218,6 +244,8 @@ print(z)
 # - Always returns a STRING
 
 # TODO: Ask the user for their name and store it in a variable
+user = input("What is your name? ")
+print(f"you are {user}")
 # TODO: Print a greeting using that name
 
 
@@ -229,6 +257,9 @@ print(z)
 #
 # int()   → converts to integer
 # float() → converts to floating-point number
+age = int(input("How old are you? "))
+
+print(f"next year you will be {age + 1}")
 
 # TODO: Ask the user for their age (integer)
 # TODO: Ask the user for their score (float)
