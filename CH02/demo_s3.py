@@ -249,34 +249,44 @@ print(f"you are {user}")
 # TODO: Print a greeting using that name
 
 
-# ======================================================
+# =========================================
 # Reading Numeric Input
-# ======================================================
-# Since input() returns a string, we must convert it
+# =========================================
+# Since input() returns a string, 
+# we must convert it
 # when we want numbers.
 #
 # int()   → converts to integer
 # float() → converts to floating-point number
 age = int(input("How old are you? "))
-
 print(f"next year you will be {age + 1}")
 
-# TODO: Ask the user for their age (integer)
-# TODO: Ask the user for their score (float)
+# Ask the user for their exam score (float)
 
-# TODO: TASK! Write a small program which calculates the
-# total pay of a user. Assume the user knows how many
-# hours they worked and what their hourly pay is.
+exam_grade = float(input("What did you get on the exam? "))
+curve = 2.5
+final_grade = exam_grade + curve
+print(f"Your final score is {final_grade}%")
+
+# TODO: TASK! Write a small program which calculates the total pay of a user. Assume the user knows 
+#   1. how many hours they worked and 
+#   2. what their hourly pay is.
+
+# input: hours worked, hourly rate
+hours_worked = float(input("How many hours did you work? "))
+rate = float(input("What is your hourly rate? "))
+# processing:
+total_pay = rate * hours_worked
+# output: total pay
+print(f"Your total pay is ${total_pay:.2f}")
 
 # ======================================================
 # Other Data Type Conversions
 # ======================================================
-# bool()    → converts to bool
-#       - Converting to bool follows truthiness rules:
-#       - 0, 0.0, "", and None become False
-#       - almost everything else becomes True
 # str()     → converts to string
-
+x = 4
+y = 5
+print(str(x)+str(y))
 # ======================================================
 # !!!GPH #2: Named Constants
 # ======================================================
@@ -285,7 +295,14 @@ print(f"next year you will be {age + 1}")
 #
 # Constants are written in ALL CAPS by convention.
 
-# TODO: Create a constant interest rate
+# TODO: Create a constant tax rate
+TAX_RATE = 0.10
+cost_coffee = 5.99
+
+# calculate tax for coffee 
+tax = TAX_RATE * cost_coffee
+print(f"tax = {tax:.5f}")
+
 # TODO: Use it in a calculation
 
 # ======================================================

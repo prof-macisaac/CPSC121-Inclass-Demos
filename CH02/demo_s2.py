@@ -261,8 +261,8 @@ print(f"pi is {pi:.1f}")
 # - Always returns a STRING
 
 # TODO: Ask the user for their name and store it in a variable
-user_name = input("What is your name? ")
-print(user_name)
+# user_name = input("What is your name? ")
+# print(user_name)
 # TODO: Print a greeting using that name
 
 
@@ -282,30 +282,42 @@ age = int(input("How old are you? "))
 print(age + 1 )
 
 # TODO: Ask the user for their score (float)
+exam_score = float(input("What did you get on exam 1? "))
 
-# TODO: TASK! Write a small program which calculates the
-# total pay of a user. Assume the user knows how many
-# hours they worked and what their hourly pay is.
+print(exam_score+2.5)
+# TODO: TASK! Write a small program which calculates the total pay of a user. 
+# Assume the user knows 
+#   - how many hours they worked and 
+#   - what their hourly pay is.
+hours_worked = float(input("How many hours did you work? "))
+pay_rate = float(input("Enter pay rate: "))
 
+total_payout = hours_worked * pay_rate
+
+print(f"you earned ${total_payout:.2f}")
 # ======================================================
 # Other Data Type Conversions
 # ======================================================
-# bool()    → converts to bool
-#       - Converting to bool follows truthiness rules:
-#       - 0, 0.0, "", and None become False
-#       - almost everything else becomes True
 # str()     → converts to string
-
+x = 4
+y = 5
+print(str(x)+str(y))
 # ======================================================
 # !!!GPH #2: Named Constants
 # ======================================================
+
 # A magic number is an unexplained numeric value.
+
 # Named constants make code readable and easier to maintain.
 #
 # Constants are written in ALL CAPS by convention.
 
-# TODO: Create a constant interest rate
+# TODO: Create a constant tax rate
+TAX_RATE = 0.10
+
 # TODO: Use it in a calculation
+coffee_price = 5.99
+print(f"taxes = {TAX_RATE*coffee_price:.2f}")
 
 # ======================================================
 # !!!GPH #3: Commenting Your Code

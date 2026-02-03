@@ -51,6 +51,13 @@ print(3 < 5)
 print(10 == 2)
 print("a" != "b")
 
+# ======================================================
+# Other Data Type Conversions
+# ======================================================
+# bool()    → converts to bool
+#       - Converting to bool follows truthiness rules:
+#       - 0, 0.0, "", and None become False
+#       - almost everything else becomes True
 
 # ======================================================
 # Relational Operators (Comparisons)
