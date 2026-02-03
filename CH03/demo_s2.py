@@ -42,7 +42,10 @@ Topics covered:
 #   "a" != "b"   -> True
 
 # TODO: Print a few boolean literals and boolean expressions
-
+is_student = True
+is_senior = False
+print(is_student)
+print(type(is_student))
 
 
 # ======================================================
@@ -59,6 +62,7 @@ Topics covered:
 # IMPORTANT:
 #   =   is assignment
 #   ==  is comparison
+
 
 
 # TODO: Print the result of each comparison between x and y
@@ -181,6 +185,13 @@ Topics covered:
 
 # TASK:
 # Change grade to 59, 60, 70, 80, 90 and confirm results.
+
+# Participation Assignment: 
+# Ask for the temperature (in °F) and print advice:
+# - Below 32 → "It's freezing"
+# - 32–59 → "Wear a jacket"
+# - 60–79 → "Nice weather"
+# - 80+ → "It's hot"
 
 
 # ======================================================
