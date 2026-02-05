@@ -42,9 +42,7 @@ Topics covered:
 #   "a" != "b"   -> True
 
 # TODO: Print a few boolean literals and boolean expressions
-is_student = True
-print(is_student)
-print(type(is_student))
+
 
 
 # ======================================================
@@ -61,14 +59,7 @@ print(type(is_student))
 # IMPORTANT:
 #   =   is assignment
 #   ==  is comparison
-x = 12.5
-y = 11.5
-print(f"x < y {x < y}")
-print(f"x > y {x > y}")
-print(f"x <= y {x <= y}")
-print(f"x >= y {x >= y}")
-print(f"x == y {x == y}")
-print(f"x != y {x != y}")
+
 
 # TODO: Print the result of each comparison between x and y
 
@@ -81,16 +72,6 @@ print(f"x != y {x != y}")
 # ======================================================
 # The "if" statement runs a block ONLY if the condition is True.
 # Indentation matters! Everything indented under if is the block.
-
-temperature = 60
-
-if temperature < 70:
-    print("you should probably bring a jacket.")
-    print("...")
-else:
-    print("good day for a t-shirt!")
-
-print("The weather report is complete")
 
 # ex: temperature print outs
 
@@ -109,7 +90,7 @@ print("The weather report is complete")
 #
 # 3) Expecting the if-block to run when condition is False
 
-# (No code here—just warnings students will definitely hit.)
+
 
 
 # ======================================================
@@ -137,14 +118,6 @@ print("The weather report is complete")
 # "Z" < "a" is True because ASCII/Unicode ordering places capital letters earlier.
 
 
-is_student = input("Are you a student (yes/no)? ")
-if is_student == "yes":
-    print("You are eligible for the student discount!")
-    price = 11
-else:
-    print("You are not eligible for the student discount")
-    price = 15
-print(f"You ticket costs ${price}")
 
 # TODO: Compare strings for equality
 
@@ -165,18 +138,18 @@ print(f"You ticket costs ${price}")
 # Useful when you only want to check something
 # after another condition is already true.
 
-gpa = 3.4
-has_internship = True
-print("gpa:", gpa, "has_internship:", has_internship)
+# gpa = 3.4
+# has_internship = True
+# print("gpa:", gpa, "has_internship:", has_internship)
 
-if gpa >= 3.0:
-    print("Meets GPA requirement.")
-    if has_internship:
-        print("Eligible for honors interview.")
-    else:
-        print("Consider getting experience for honors interview.")
-else:
-    print("Does not meet GPA requirement.")
+# if gpa >= 3.0:
+#     print("Meets GPA requirement.")
+#     if has_internship:
+#         print("Eligible for honors interview.")
+#     else:
+#         print("Consider getting experience for honors interview.")
+# else:
+#     print("Does not meet GPA requirement.")
 
 
 
@@ -190,20 +163,24 @@ else:
 # Use elif when there are MORE than two possibilities.
 # Only ONE branch in the chain runs.
 
-grade = 86
-print("grade:", grade)
+# grade = 83
+# print("grade:", grade)
 
-if grade >= 90:
-    letter = "A"
-elif grade >= 80:
-    letter = "B"
-elif grade >= 70:
-    letter = "C"
-elif grade >= 60:
-    letter = "D"
-else:
-    letter = "F"
-print("letter grade:", letter)
+# if grade >= 90:
+#     letter = "A"
+# elif grade >= 80:
+#     letter = "B"
+# elif grade >= 70:
+#     letter = "C"
+# elif grade >= 60:
+#     letter = "D"
+# else:
+#     letter = "F"
+
+# print("letter grade:", letter)
+
+# TASK:
+# Change grade to 59, 60, 70, 80, 90 and confirm results.
 
 # Participation Assignment: 
 # Ask for the temperature (in °F) and print advice:
@@ -211,7 +188,6 @@ print("letter grade:", letter)
 # - 32–59 → "Wear a jacket"
 # - 60–79 → "Nice weather"
 # - 80+ → "It's hot"
-
 
 # ======================================================
 # Logical Operators: and / or / not
@@ -320,3 +296,5 @@ print("letter grade:", letter)
 #     price -= 2
 #
 # print("Ticket price: $", price)
+
+print("\nEnd of Chapter 3 demo file.")

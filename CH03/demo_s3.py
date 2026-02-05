@@ -42,7 +42,8 @@ Topics covered:
 #   "a" != "b"   -> True
 
 # TODO: Print a few boolean literals and boolean expressions
-
+x = True
+print(x)
 
 
 # ======================================================
@@ -59,6 +60,16 @@ Topics covered:
 # IMPORTANT:
 #   =   is assignment
 #   ==  is comparison
+x = 11
+y = 11
+
+print(f"x < y: {x < y}")
+print(f"x > y: {x > y}")
+z = x >= y
+print(z)
+print(x <= y)
+print(x == y)
+print(x != y)
 
 
 # TODO: Print the result of each comparison between x and y
@@ -73,6 +84,17 @@ Topics covered:
 # The "if" statement runs a block ONLY if the condition is True.
 # Indentation matters! Everything indented under if is the block.
 
+temperature = 69.9999
+
+
+if temperature < 70:
+    print("It is cold out")
+    print("...")
+else:
+    print("It is hot out")
+    print("You don't need a jacket")
+
+print("That concludes the weather report")
 # ex: temperature print outs
 
 # TASK:
@@ -90,7 +112,7 @@ Topics covered:
 #
 # 3) Expecting the if-block to run when condition is False
 
-# (No code here—just warnings students will definitely hit.)
+
 
 
 # ======================================================
@@ -100,7 +122,10 @@ Topics covered:
 # - if block runs when condition is True
 # - else block runs when condition is False
 
+
+
 # ex: age, ticket price
+
 
 # TASK:
 # Change age to 12 and run again.
@@ -121,6 +146,12 @@ Topics covered:
 
 # TODO: Compare strings for equality
 
+is_student = input("Are you a student?(yes/no) ")
+
+if is_student == "yes":
+    print("You receive the student discount")
+
+
 
 # TODO: Compare strings alphabetically
 
@@ -138,18 +169,18 @@ Topics covered:
 # Useful when you only want to check something
 # after another condition is already true.
 
-# gpa = 3.4
-# has_internship = True
-# print("gpa:", gpa, "has_internship:", has_internship)
+gpa = 3.4
+has_internship = True
+print("gpa:", gpa, "has_internship:", has_internship)
 
-# if gpa >= 3.0:
-#     print("Meets GPA requirement.")
-#     if has_internship:
-#         print("Eligible for honors interview.")
-#     else:
-#         print("Consider getting experience for honors interview.")
-# else:
-#     print("Does not meet GPA requirement.")
+if gpa >= 3.0:
+    print("Meets GPA requirement.")
+    if has_internship:
+        print("Eligible for honors interview.")
+    else:
+        print("Consider getting experience for honors interview.")
+else:
+    print("Does not meet GPA requirement.")
 
 
 
@@ -163,25 +194,22 @@ Topics covered:
 # Use elif when there are MORE than two possibilities.
 # Only ONE branch in the chain runs.
 
-# grade = 83
-# print("grade:", grade)
+grade = 33
+print("grade:", grade)
 
-# if grade >= 90:
-#     letter = "A"
-# elif grade >= 80:
-#     letter = "B"
-# elif grade >= 70:
-#     letter = "C"
-# elif grade >= 60:
-#     letter = "D"
-# else:
-#     letter = "F"
-
-# print("letter grade:", letter)
-
+if grade >= 90:
+    letter = "A"
+elif grade >= 80:
+    letter = "B"
+elif grade >= 70:
+    letter = "C"
+elif grade >= 60:
+    letter = "D"
+else:
+    letter = "F"
+print("letter grade:", letter)
 # TASK:
 # Change grade to 59, 60, 70, 80, 90 and confirm results.
-
 # Participation Assignment: 
 # Ask for the temperature (in °F) and print advice:
 # - Below 32 → "It's freezing"
