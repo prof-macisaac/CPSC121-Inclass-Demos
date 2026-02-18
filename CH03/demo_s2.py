@@ -137,14 +137,14 @@ print("The weather report is complete")
 # "Z" < "a" is True because ASCII/Unicode ordering places capital letters earlier.
 
 
-is_student = input("Are you a student (yes/no)? ")
-if is_student == "yes":
-    print("You are eligible for the student discount!")
-    price = 11
-else:
-    print("You are not eligible for the student discount")
-    price = 15
-print(f"You ticket costs ${price}")
+# is_student = input("Are you a student (yes/no)? ")
+# if is_student == "yes":
+#     print("You are eligible for the student discount!")
+#     price = 11
+# else:
+#     print("You are not eligible for the student discount")
+#     price = 15
+# print(f"You ticket costs ${price}")
 
 # TODO: Compare strings for equality
 
@@ -223,19 +223,17 @@ print("letter grade:", letter)
 #
 # These are extremely common in conditionals.
 
-# hours = 15
-# is_weekend = False
-# print("hours:", hours, "is_weekend:", is_weekend)
+hours = 15
+is_weekend = False
+print("hours:", hours, "is_weekend:", is_weekend)
 
-# # TODO: and example: eligible if hours >= 10 AND not weekend
-# if hours >= 10 and not is_weekend:
-#     print("Eligible for weekday perk.")
+if hours >= 10 and not is_weekend:
+    print("Eligible for weekday perk.")
 
-# # TODO: or example: eligible if weekend OR hours >= 20
-# if is_weekend or hours >= 20:
-#     print("Eligible for bonus perk.")
-# else:
-#     print("Not eligible for bonus perk.")
+if is_weekend or hours >= 20:
+    print("Eligible for bonus perk.")
+else:
+    print("Not eligible for bonus perk.")
 
 # TASK:
 # Try values where one side is True and the other False.
@@ -245,21 +243,16 @@ print("letter grade:", letter)
 # ======================================================
 # Ranges with Logical Operators
 # ======================================================
-# A range check usually looks like:
-#   if low <= x <= high:
+
 # or with explicit and:
 #   if x >= low and x <= high:
 
-# temp = 72
-# print("temp:", temp)
-
-# # TODO: range using chained comparisons
-# if 68 <= temp <= 75:
-#     print("Comfortable range.")
+temp = 72
+print("temp:", temp)
 
 # # TODO: range using and
-# if temp >= 68 and temp <= 75:
-#     print("Still comfortable range (same idea).")
+if temp >= 68 and temp <= 75:
+    print("Still comfortable range (same idea).")
 
 # TASK:
 # Create a variable speed.
@@ -275,48 +268,60 @@ print("letter grade:", letter)
 # A boolean variable often represents a condition/state.
 # We call these "flags" because they flip True/False.
 
-# is_logged_in = True
-# is_admin = False
+is_logged_in = True
+is_admin = False
+if is_logged_in:
+    print("1. Welcome back!")
+else:
+    print("2. Please log in.")
 
-# # TODO: Use flags in conditions
-# if is_logged_in:
-#     print("Welcome back!")
-# else:
-#     print("Please log in.")
+if is_logged_in and is_admin:
+    print("3. Admin controls enabled.")
+else:
+    print("4. Standard user mode.")
 
-# if is_logged_in and is_admin:
-#     print("Admin controls enabled.")
-# else:
-#     print("Standard user mode.")
-
-# TASK:
-# Flip is_admin to True and explain what changed.
-
+# what are the outputs of the following conditions:
+# is_logged_in  |   is_admin    | Result
+# True          |   True        | 1 3
+# True          |   False       | 1 4
+# False         |   True        | 2 4
+# False         |   False       | 2 4
 
 
 # ======================================================
-# Mini "Putting it Together" Program
+# Truthiness and Converting to bool
 # ======================================================
-# This is a small end-to-end example using:
-# input, conversion, if/elif/else, and logical ops.
+# Any value can be converted to True/False with bool(value).
+# In an if-statement, Python uses this automatically.
+# ------------------------------------------------------
+# Common falsy values:
+#   False, 0, 0.0, "", [], {}, set(), None
+# Almost everything else is truthy.
 
-# Uncomment and run at the end of class:
+print("\n=== bool() examples ===")
+print(bool(-1), bool(0))
+print(bool(3.14), bool(0.0))
+print(bool("hi"), bool(""))
+print(bool(None))
+x= "  "
+if x:
+    print(f"x: {x}")
 
-# print("\n--- Mini Program: Ticket Price ---")
-# age = int(input("Enter your age: "))
-# is_student = input("Are you a student? (y/n): ").lower() == "y"
-#
-# if age < 5:
-#     price = 0
-# elif age <= 12:
-#     price = 7
-# elif age >= 65:
-#     price = 8
+
+# Truthiness in if-statements
+# name = ""   # try "Dom"
+# if name:
+#     print("Name provided")
 # else:
-#     price = 10
-#
-# # Student discount for ages 13-64
-# if 13 <= age <= 64 and is_student:
-#     price -= 2
-#
-# print("Ticket price: $", price)
+#     print("No name provided")
+
+
+# ======================================================
+# None: "no value"
+# ======================================================
+# None represents the absence of a value.
+# It is NOT 0, NOT "", and NOT False.
+# It means: "nothing has been assigned yet" or "no result".
+
+x = None
+print(x)
