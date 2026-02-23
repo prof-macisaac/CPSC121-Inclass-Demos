@@ -254,10 +254,13 @@ for i in range(1,11):
 # - Print the product of the two loop variables
 # - Format the output so each row is on its own line
 print()
-for i in range(1,4):
+for i in range(1, 4):
+    # print(i)
     for j in range(1,4):
-        print(f"{j*i}", end= " ")
+        print(f"{j*i}", end = " ")
     print()
+
+
 # TASK:
 # - Print (i, j) pairs instead of products
 # - Make a 5x5 multiplication table
