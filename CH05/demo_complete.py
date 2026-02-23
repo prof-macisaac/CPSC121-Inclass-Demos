@@ -27,7 +27,7 @@ def demo_function_exists_but_does_not_run():
     print("This only prints if the function is CALLED.")
 
 # Try this: nothing prints until you call it.
-# demo_function_exists_but_does_not_run()
+demo_function_exists_but_does_not_run()
 
 
 # ============================================================
@@ -47,8 +47,8 @@ print("Return value from say_hello():", result)  # None
 
 # GOAL: show "main-like" flow using multiple helper functions.
 def show_intro():
-    print("\n=== Welcome ===")
-    print("Today: Functions! (void vs return, args, scope, modules)")
+    print("=== Welcome ===")
+    print("Today: Learning about functions")
 
 def show_outro():
     print("=== Done ===\n")
@@ -66,13 +66,16 @@ show_outro()
 def greet_name(name):
     print("Hello,", name)
 
-greet_name("Dominic")
-greet_name("Ada")
-greet_name("Linus")
+greet_name("John")
+greet_name("Sam")
 
 # GOAL: show that you can pass variables as arguments.
 user = "Student"
 greet_name(user)
+
+def print_one_more(num):
+    print(num+1)
+
 
 
 # ============================================================
@@ -87,11 +90,14 @@ add_and_print(10, 5)
 add_and_print(5, 10)  # different ordering -> different mapping
 
 # GOAL: show a common "mistake"—passing wrong order.
-def print_full_name(first, last):
-    print(last + ", " + first)
+def print_repeat(statement, times):
+    for i in range(times):
+        print(statement)
 
-print_full_name("Dominic", "MacIsaac")
-print_full_name("MacIsaac", "Dominic")  # wrong order -> awkward output
+print_repeat("Hello", 4)
+print_repeat(4,"Hello")
+
+# TASK: write a function that takes two values, and prints out the larger value
 
 
 # ============================================================
@@ -122,7 +128,7 @@ scope_b()
 
 
 # ============================================================
-# 5) PASSING ARGUMENTS: "PASS BY VALUE" FEELING (REASSIGNMENT)
+# 5) PASSING ARGUMENTS
 # ============================================================
 
 # GOAL: show that reassigning a parameter does not change caller variable.
@@ -132,99 +138,10 @@ def change_me(n):
     print("Inside change_me AFTER:", n)
 
 value = 99
-print("\nIn main BEFORE:", value)
+print("In main BEFORE:", value)
 change_me(value)
 print("In main AFTER:", value)  # still 99
 
-
-# ============================================================
-# 6) KEYWORD ARGUMENTS
-# ============================================================
-
-# GOAL: show keyword args let you pass by NAME instead of position.
-def describe_pet(animal, name):
-    print("Animal:", animal)
-    print("Name:", name)
-
-describe_pet("dog", "Luna")
-describe_pet(name="Luna", animal="dog")  # order doesn't matter now
-
-# GOAL: show you can mix positional then keyword (positional must come first).
-describe_pet("cat", name="Mochi")
-
-# Try this: SyntaxError (positional after keyword)
-# describe_pet(animal="cat", "Mochi")
-
-
-# ============================================================
-# 7) DEFAULT ARGUMENTS
-# ============================================================
-
-# GOAL: define a function with a default parameter value.
-def show_tax(price, tax_rate=0.07):
-    tax = price * tax_rate
-    print("Price:", price, "Tax rate:", tax_rate, "Tax:", tax)
-
-show_tax(100)        # uses default 0.07
-show_tax(100, 0.08)  # overrides default
-
-# GOAL: show rule: non-default params must come before default params.
-# This is INVALID (don’t run; it won’t even parse):
-# def bad_example(a=10, b):
-#     pass
-
-# GOAL: default for ALL params means you can call with none.
-def greet_with_defaults(name="friend", punctuation="!"):
-    print("Hello", name + punctuation)
-
-greet_with_defaults()
-greet_with_defaults("Dominic")
-greet_with_defaults("Dominic", "!!!")
-greet_with_defaults(punctuation="??", name="Class")
-
-
-# ============================================================
-# 8) GLOBAL VARIABLES (WHY THEY’RE RISKY)
-# ============================================================
-
-# GOAL: show that globals can be read inside functions.
-counter = 0  # global variable (avoid in real code when possible)
-
-def show_counter():
-    print("counter is:", counter)
-
-show_counter()
-
-# GOAL: show that assigning to a global inside a function requires 'global'.
-def increment_counter():
-    global counter
-    counter += 1
-
-increment_counter()
-increment_counter()
-show_counter()
-
-# GOAL: show why globals are confusing (many places can change them).
-def reset_counter():
-    global counter
-    counter = 0
-
-reset_counter()
-show_counter()
-
-
-# ============================================================
-# 9) GLOBAL CONSTANTS (OKAY USE)
-# ============================================================
-
-# GOAL: demonstrate a global constant (convention: ALL_CAPS).
-SALES_TAX = 0.092  # pretend WA-ish tax; for demo only
-
-def show_sales_tax_on(price):
-    tax = price * SALES_TAX
-    print("Price:", price, "Tax:", tax, "Total:", price + tax)
-
-show_sales_tax_on(50)
 
 
 # ============================================================
@@ -241,6 +158,8 @@ print("\ndouble(21) returned:", d)
 # GOAL: show that return values can be used directly in expressions.
 print("double(10) + double(5) =", double(10) + double(5))
 
+
+# TASK: write a function that takes two values and subtracts the smaller value from the larger value (and returns that value)
 
 # ============================================================
 # 11) RETURNING STRINGS
@@ -274,17 +193,37 @@ else:
 
 
 # ============================================================
+# 20) MODULES IDEA + __name__ == "__main__"
+# ============================================================
+
+# GOAL: show how to prevent "main code" from running when imported.
+def main():
+    print("\nRunning main() demo...")
+    show_intro()
+    greet_name("Class")
+    print("double(8) ->", double(8))
+    show_outro()
+    
+# main()
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
+# ============================================================
 # 13) RETURNING MULTIPLE VALUES
 # ============================================================
 
 # GOAL: return multiple values (Python returns a tuple).
-def min_and_max(a, b, c):
-    smallest = min(a, b, c)
-    largest = max(a, b, c)
-    return smallest, largest
-
-lo, hi = min_and_max(5, 100, 12)
-print("\nmin_and_max returned:", lo, hi)
+def add_sub(a,b):
+    added = a + b
+    subtracted = a - b
+    return added, subtracted
+a, s = add_sub(5,2)
 
 
 # ============================================================
@@ -437,23 +376,90 @@ def menu_option_3():
 
 
 # ============================================================
-# 20) MODULES IDEA + __name__ == "__main__"
+# 6) KEYWORD ARGUMENTS
 # ============================================================
 
-# GOAL: show how to prevent "main code" from running when imported.
-def main():
-    print("\nRunning main() demo...")
-    show_intro()
-    greet_name("Class")
-    print("double(8) ->", double(8))
-    show_outro()
+# GOAL: show keyword args let you pass by NAME instead of position.
+def describe_pet(animal, name):
+    print("Animal:", animal)
+    print("Name:", name)
 
-if __name__ == "__main__":
-    main()
+describe_pet("dog", "Luna")
+describe_pet(name="Luna", animal="dog")  # order doesn't matter now
 
-"""
-Teaching note:
-- If you run this file directly: __name__ == "__main__" so main() runs.
-- If you import this file from another script: __name__ becomes the module name,
-  so main() does NOT auto-run.
-"""
+# GOAL: show you can mix positional then keyword (positional must come first).
+describe_pet("cat", name="Mochi")
+
+# Try this: SyntaxError (positional after keyword)
+# describe_pet(animal="cat", "Mochi")
+
+
+# ============================================================
+# 7) DEFAULT ARGUMENTS
+# ============================================================
+
+# GOAL: define a function with a default parameter value.
+def show_tax(price, tax_rate=0.07):
+    tax = price * tax_rate
+    print("Price:", price, "Tax rate:", tax_rate, "Tax:", tax)
+
+show_tax(100)        # uses default 0.07
+show_tax(100, 0.08)  # overrides default
+
+# GOAL: show rule: non-default params must come before default params.
+# This is INVALID (don’t run; it won’t even parse):
+# def bad_example(a=10, b):
+#     pass
+
+# GOAL: default for ALL params means you can call with none.
+def greet_with_defaults(name="friend", punctuation="!"):
+    print("Hello", name + punctuation)
+
+greet_with_defaults()
+greet_with_defaults("Dominic")
+greet_with_defaults("Dominic", "!!!")
+greet_with_defaults(punctuation="??", name="Class")
+
+
+# ============================================================
+# 8) GLOBAL VARIABLES (WHY THEY’RE RISKY)
+# ============================================================
+
+# GOAL: show that globals can be read inside functions.
+counter = 0  # global variable (avoid in real code when possible)
+
+def show_counter():
+    print("counter is:", counter)
+
+show_counter()
+
+# GOAL: show that assigning to a global inside a function requires 'global'.
+def increment_counter():
+    global counter
+    counter += 1
+
+increment_counter()
+increment_counter()
+show_counter()
+
+# GOAL: show why globals are confusing (many places can change them).
+def reset_counter():
+    global counter
+    counter = 0
+
+reset_counter()
+show_counter()
+
+
+# ============================================================
+# 9) GLOBAL CONSTANTS (OKAY USE)
+# ============================================================
+
+# GOAL: demonstrate a global constant (convention: ALL_CAPS).
+SALES_TAX = 0.092  # pretend WA-ish tax; for demo only
+
+def show_sales_tax_on(price):
+    tax = price * SALES_TAX
+    print("Price:", price, "Tax:", tax, "Total:", price + tax)
+
+show_sales_tax_on(50)
