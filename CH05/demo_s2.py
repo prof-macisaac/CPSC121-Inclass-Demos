@@ -123,8 +123,9 @@ print(greeting)
 # ============================================================
 def is_even(n):
     return n % 2 == 0
+
 num = 17
-if is_even(n):
+if is_even(num):
     print(f"{num} is even")
 else:
     print(f"{num} is odd")

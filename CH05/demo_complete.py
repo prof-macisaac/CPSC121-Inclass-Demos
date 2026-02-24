@@ -193,7 +193,7 @@ else:
 
 
 # ============================================================
-# 20) MODULES IDEA + __name__ == "__main__"
+# GPH: Main Functions
 # ============================================================
 
 # GOAL: show how to prevent "main code" from running when imported.
@@ -206,14 +206,56 @@ def main():
     
 # main()
 
-if __name__ == "__main__":
-    main()
+# ============================================================
+# GPH: Function Headers
+# ============================================================
 
+def calculate_area(radius):
+    """
+    Calculate the area of a circle
 
+    Parameters:
+        radius (float): radius of the circle
+    
+    Returns:
+        float: the area of the circle
+    """
+    return 3.14 * radius ** 2
 
+def calculate_letter_grade(score, is_extra_credit):
+    """
+    Determine the final letter grade for a student.
 
+    If extra credit is True, 5 points are added to the score.
+    The score is capped at 100 after extra credit is applied.
+    Letter grades are assigned using a standard 10-point scale.
 
+    Parameters:
+        score (float): The student's numeric score (0-100).
+        is_extra_credit (bool): Whether extra credit should be applied.
 
+    Returns:
+        str: The final letter grade ("A", "B", "C", "D", or "F").
+
+    """
+    if score < 0 or score > 100:
+        raise ValueError("Score must be between 0 and 100.")
+
+    if is_extra_credit:
+        score += 5
+        if score > 100:
+            score = 100
+
+    if score >= 90:
+        return "A"
+    elif score >= 80:
+        return "B"
+    elif score >= 70:
+        return "C"
+    elif score >= 60:
+        return "D"
+    else:
+        return "F"
 # ============================================================
 # 13) RETURNING MULTIPLE VALUES
 # ============================================================
@@ -235,9 +277,6 @@ def safe_divide(num1, num2):
     if num2 == 0:
         return None
     return num1 / num2
-
-print("\nsafe_divide(10, 2):", safe_divide(10, 2))
-print("safe_divide(10, 0):", safe_divide(10, 0))
 
 result = safe_divide(10, 0)
 if result is None:
@@ -376,26 +415,7 @@ def menu_option_3():
 
 
 # ============================================================
-# 6) KEYWORD ARGUMENTS
-# ============================================================
-
-# GOAL: show keyword args let you pass by NAME instead of position.
-def describe_pet(animal, name):
-    print("Animal:", animal)
-    print("Name:", name)
-
-describe_pet("dog", "Luna")
-describe_pet(name="Luna", animal="dog")  # order doesn't matter now
-
-# GOAL: show you can mix positional then keyword (positional must come first).
-describe_pet("cat", name="Mochi")
-
-# Try this: SyntaxError (positional after keyword)
-# describe_pet(animal="cat", "Mochi")
-
-
-# ============================================================
-# 7) DEFAULT ARGUMENTS
+# DEFAULT ARGUMENTS
 # ============================================================
 
 # GOAL: define a function with a default parameter value.
@@ -406,60 +426,13 @@ def show_tax(price, tax_rate=0.07):
 show_tax(100)        # uses default 0.07
 show_tax(100, 0.08)  # overrides default
 
-# GOAL: show rule: non-default params must come before default params.
-# This is INVALID (don’t run; it won’t even parse):
-# def bad_example(a=10, b):
-#     pass
 
 # GOAL: default for ALL params means you can call with none.
 def greet_with_defaults(name="friend", punctuation="!"):
-    print("Hello", name + punctuation)
+    print(f"Hello, {name}{punctuation}")
 
 greet_with_defaults()
 greet_with_defaults("Dominic")
 greet_with_defaults("Dominic", "!!!")
 greet_with_defaults(punctuation="??", name="Class")
 
-
-# ============================================================
-# 8) GLOBAL VARIABLES (WHY THEY’RE RISKY)
-# ============================================================
-
-# GOAL: show that globals can be read inside functions.
-counter = 0  # global variable (avoid in real code when possible)
-
-def show_counter():
-    print("counter is:", counter)
-
-show_counter()
-
-# GOAL: show that assigning to a global inside a function requires 'global'.
-def increment_counter():
-    global counter
-    counter += 1
-
-increment_counter()
-increment_counter()
-show_counter()
-
-# GOAL: show why globals are confusing (many places can change them).
-def reset_counter():
-    global counter
-    counter = 0
-
-reset_counter()
-show_counter()
-
-
-# ============================================================
-# 9) GLOBAL CONSTANTS (OKAY USE)
-# ============================================================
-
-# GOAL: demonstrate a global constant (convention: ALL_CAPS).
-SALES_TAX = 0.092  # pretend WA-ish tax; for demo only
-
-def show_sales_tax_on(price):
-    tax = price * SALES_TAX
-    print("Price:", price, "Tax:", tax, "Total:", price + tax)
-
-show_sales_tax_on(50)
