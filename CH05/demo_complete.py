@@ -257,7 +257,7 @@ def calculate_letter_grade(score, is_extra_credit):
     else:
         return "F"
 # ============================================================
-# 13) RETURNING MULTIPLE VALUES
+# RETURNING MULTIPLE VALUES
 # ============================================================
 
 # GOAL: return multiple values (Python returns a tuple).
@@ -269,7 +269,7 @@ a, s = add_sub(5,2)
 
 
 # ============================================================
-# 14) RETURNING None TO SIGNAL AN ERROR
+# RETURNING None TO SIGNAL AN ERROR
 # ============================================================
 
 # GOAL: return None when an operation can’t be performed.
@@ -286,7 +286,7 @@ else:
 
 
 # ============================================================
-# 15) THE pass KEYWORD (PLACEHOLDER WHILE DESIGNING)
+# THE pass KEYWORD (PLACEHOLDER WHILE DESIGNING)
 # ============================================================
 
 # GOAL: show how pass lets you stub out a function during design.
@@ -302,7 +302,7 @@ def step2():
 
 
 # ============================================================
-# 16) IMPORTING MODULES + DOT NOTATION (random)
+# IMPORTING MODULES + DOT NOTATION (random)
 # ============================================================
 
 # GOAL: use the random module and dot notation.
@@ -328,7 +328,7 @@ print("Seeded again (same sequence):", random.randint(1, 100))
 
 
 # ============================================================
-# 17) THE math MODULE
+# THE math MODULE
 # ============================================================
 
 # GOAL: use math module constants and functions.
@@ -350,7 +350,7 @@ print("pi radians in degrees:", math.degrees(math.pi))
 
 
 # ============================================================
-# 18) MINI “TOP-DOWN DESIGN” EXAMPLE (PUTTING IT TOGETHER)
+# MINI “TOP-DOWN DESIGN” EXAMPLE (PUTTING IT TOGETHER)
 # ============================================================
 
 # GOAL: show how functions can divide a task into smaller steps.
@@ -370,48 +370,12 @@ def print_pay_stub(hours, rate, gross):
     print("Gross Pay:", gross)
 
 # Uncomment to run interactively:
-# hours = get_hours_worked()
-# rate = get_hourly_rate()
-# gross = calc_gross_pay(hours, rate)
-# print_pay_stub(hours, rate, gross)
+hours = get_hours_worked()
+rate = get_hourly_rate()
+gross = calc_gross_pay(hours, rate)
+print_pay_stub(hours, rate, gross)
 
 
-# ============================================================
-# 19) MENU-DRIVEN PROGRAM (LOOP + FUNCTIONS)
-# ============================================================
-
-# GOAL: show a simple menu program that calls functions based on user choice.
-def menu_option_1():
-    print("Option 1: Roll a die (1..6):", random.randint(1, 6))
-
-def menu_option_2():
-    n = int(input("Enter a number to double: "))
-    print("Double is:", double(n))
-
-def menu_option_3():
-    n = int(input("Enter a number to test even/odd: "))
-    print("Even?" , is_even(n))
-
-# Uncomment to run menu:
-# choice = ""
-# while choice != "4":
-#     print("\nMenu:")
-#     print("1) Roll a die")
-#     print("2) Double a number")
-#     print("3) Even/odd test")
-#     print("4) Quit")
-#     choice = input("Choose: ")
-# 
-#     if choice == "1":
-#         menu_option_1()
-#     elif choice == "2":
-#         menu_option_2()
-#     elif choice == "3":
-#         menu_option_3()
-#     elif choice == "4":
-#         print("Goodbye!")
-#     else:
-#         print("Invalid choice.")
 
 
 # ============================================================
