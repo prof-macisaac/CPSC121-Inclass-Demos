@@ -23,7 +23,7 @@ def show_menu():
     """
     Displays the program menu options to the user.
     """
-    print("\n=== Math & Dice Utility Program ===")
+    print("=== Math & Dice Utility Program ===")
     print("1. Add two numbers")
     print("2. Calculate square root")
     print("3. Roll a dice")

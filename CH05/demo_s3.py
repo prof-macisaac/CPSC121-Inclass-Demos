@@ -146,16 +146,55 @@ else:
 # ============================================================
 # GPH: Main Functions
 # ============================================================
+def print_plus_one(x):
+    print(x+1)
 
+def main():
+    x = int(input("enter your age"))
+    print_plus_one(x)
+    x += 1
+    print(f"next year you will be {x}")
 
+# main()
 
 # ============================================================
-# GPH: Function Headers
+# GPH: Function Docstrings
 # ============================================================
+
+def calculate_area(radius):
+    """
+    Calculates the area of a circle
+
+    Parameters:
+        radius (float): radius of a circle
+    Returns:
+        float: the area of the circle
+    """
+    return 3.14 * radius ** 2
+
+print(calculate_area(10))
+
 
 
 
 def calculate_letter_grade(score, is_extra_credit):
+    """
+    Determine the final letter grade for a student.
+
+    If extra credit is True, 5 points are added to the score.
+    The score is capped at 100 after extra credit is applied.
+    Letter grades are assigned using a standard 10-point scale.
+
+    Parameters:
+        score (float): The student's numeric score (0-100).
+        is_extra_credit (bool): Whether extra credit should be applied.
+
+    Returns:
+        str: The final letter grade ("A", "B", "C", "D", or "F")
+
+        or None if score is invalid
+
+    """
     if score < 0 or score > 100:
         return None
 
@@ -178,7 +217,14 @@ def calculate_letter_grade(score, is_extra_credit):
 # RETURNING MULTIPLE VALUES
 # ============================================================
 
+def add_sub(a, b):
+    added = a + b
+    subtracted = a - b
+    return added, subtracted
 
+x, y = add_sub(10, 3)
+print(x)
+print(y)
 
 # ============================================================
 # THE pass KEYWORD (PLACEHOLDER WHILE DESIGNING)
@@ -195,12 +241,7 @@ def calculate_letter_grade(score, is_extra_credit):
 # THE math MODULE
 # ============================================================
 
-
-
-# ============================================================
-# MINI “TOP-DOWN DESIGN” EXAMPLE (PUTTING IT TOGETHER)
-# ============================================================
-
+# https://docs.python.org/3/library/math.html
 
 
 

@@ -136,14 +136,50 @@ else:
 # ============================================================
 
 
+def x_2(x):
+    return x + 1
 
+def print2(x):
+    print(x_2(x))
+
+def main():
+    print2(110)
+    print("this is main")
+
+main()
 # ============================================================
-# GPH: Function Headers
+# GPH: Function Docstrings
 # ============================================================
 
+def calculate_area(radius):
+    """
+    Calculate the area of a circle
 
+    Parameters:
+        radius (float): radius of a circle
+    
+    Returns:
+        float: the area of the circle
+    """
+    return 3.14 * radius ** 2
+
+print(calculate_area(10))
 
 def calculate_letter_grade(score, is_extra_credit):
+    """
+    determine the final letter grade for a student
+
+    if extra credit is True, 5 points are added to the score. 
+
+    Letter grades are assigned using a 10-point scale
+
+    Parameters:
+        score (float): student's exam score (0-100)
+        is_extra_credit (bool): whether extra credit should be applied
+
+    Returns:
+        str: final letter grade  (A,B,C,D, F)
+    """
     if score < 0 or score > 100:
         return None
 
@@ -162,10 +198,18 @@ def calculate_letter_grade(score, is_extra_credit):
         return "D"
     else:
         return "F"
+
 # ============================================================
 # RETURNING MULTIPLE VALUES
 # ============================================================
+def add_sub(a, b):
+    added = a + b
+    subtracted = a - b
+    return added, subtracted
 
+x, y = add_sub(10, 3)
+print(x)
+print(y)
 
 
 # ============================================================
@@ -183,6 +227,7 @@ def calculate_letter_grade(score, is_extra_credit):
 # THE math MODULE
 # ============================================================
 
+# https://docs.python.org/3/library/math.html
 
 
 # ============================================================
