@@ -326,7 +326,7 @@ try:
             print(f"Read value = {value}, running total = {total}")
 
 except ValueError as err:
-    print("\nCaught ValueError: a line was not a valid whole number.")
+    print("Caught ValueError: a line was not a valid whole number.")
     print("Error message:", err)
 
 
@@ -345,13 +345,12 @@ total = 0
 try:
     with open("demo_mixed_data.txt", "r") as f:
         for line in f:
-            total += int(line)
+            try:
+                total += int(line)
+            except ValueError:
+                print("Not a valid number.")
 
-    print("\nTotal computed successfully =", total)
 
+    print(f"Total computed successfully = {total}")
 except FileNotFoundError:
-    print("\nThat file doesn't exist.")
-except ValueError:
-    print("\nThat file exists, but it contains non-numeric data.")
-
-print("\nEnd of CH06 demo.")
+    print("That file doesn't exist.")
