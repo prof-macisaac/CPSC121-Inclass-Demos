@@ -227,6 +227,10 @@ print("line2 using repr(...):")
 print(repr(line2))
 
 
+print(f"{line1} is the first number")
+line1_updated = line1.strip()
+print(f"{line1_updated} is the first number")
+
 """
 --- Looping over a file (for line in file) ---
 This is the most common way to process a file line-by-line.
