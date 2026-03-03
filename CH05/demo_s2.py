@@ -216,12 +216,29 @@ print(y)
 # THE pass KEYWORD (PLACEHOLDER WHILE DESIGNING)
 # ============================================================
 
+def calculate_average(number):
+    pass
+
+if True:
+    pass
+x = calculate_average(10)
+print(x)
+
 
 
 # ============================================================
 # IMPORTING MODULES + DOT NOTATION (random)
 # ============================================================
+import random
 
+random.seed(12)
+
+x = random.randint(1,10)
+print(f"random x = {x}")
+
+print(f"random random = {random.random()}")
+
+print(f"random uniform = {random.uniform(5,7)}")
 
 # ============================================================
 # THE math MODULE
@@ -229,6 +246,15 @@ print(y)
 
 # https://docs.python.org/3/library/math.html
 
+import math
+radius = 3
+area = math.pi * radius ** 2
+print(math.pi)
+print(area)
+
+print(math.sqrt(144))
+print(math.ceil(math.pi))
+print(math.floor(math.pi))
 
 # ============================================================
 # MINI “TOP-DOWN DESIGN” EXAMPLE (PUTTING IT TOGETHER)
@@ -242,3 +268,8 @@ print(y)
 # DEFAULT ARGUMENTS
 # ============================================================
 
+def calculate_total(price, 
+                    tax_rate=0.1, base = 2):
+    return price + price*tax_rate + base
+
+print(calculate_total(10, base = 5))

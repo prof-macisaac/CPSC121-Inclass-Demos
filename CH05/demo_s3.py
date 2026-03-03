@@ -230,12 +230,28 @@ print(y)
 # THE pass KEYWORD (PLACEHOLDER WHILE DESIGNING)
 # ============================================================
 
+def calculate_average(number):
+    pass
 
+x = 5
+print(x)
+calculate_average(10)
 
 # ============================================================
 # IMPORTING MODULES + DOT NOTATION (random)
 # ============================================================
+import random
 
+# random.seed(2)
+print(f"random int {random.randint(1,10)}")
+print(f"random int {random.randint(1,10)}")
+print(f"random int {random.randint(1,10)}")
+
+fl = random.random()
+print(fl)
+
+x = random.uniform(5,7)
+print(x)
 
 # ============================================================
 # THE math MODULE
@@ -243,10 +259,22 @@ print(y)
 
 # https://docs.python.org/3/library/math.html
 
+import math
+print(math.pi)
+print(math.pi *3 **2)
 
+print(math.sqrt(144))
+print(math.ceil(math.pi))
+print(math.floor(math.pi))
 
 
 # ============================================================
 # DEFAULT ARGUMENTS
 # ============================================================
 
+def total_after_tax(price, tax_rate=0.07, tip=2, pr=False):
+    if pr:
+        print(price + price * tax_rate + tip)
+    return price + price * tax_rate + tip
+
+print(total_after_tax(10))
