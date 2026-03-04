@@ -15,7 +15,7 @@ def local_only():
     return y
 
 local_only()
-print(y)
+# print(y)
 
 
 # Function can read a global variable
@@ -31,7 +31,8 @@ read_global()
 count = 0
 
 def bad_increment():
-    count = count + 1
+    pass
+    # count = count + 1
 
 bad_increment()
 print(count)
@@ -44,6 +45,7 @@ def good_increment():
     count = count + 1
 
 good_increment()
+print("good")
 print(count)
 
 
@@ -95,6 +97,6 @@ def reset_score():
     score = 0
 
 add_points(10)
-score
+print(score)
 reset_score()
-score
+print(score)
