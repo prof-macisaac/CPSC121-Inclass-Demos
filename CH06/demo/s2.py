@@ -5,6 +5,8 @@ CH06 Demo: Files + Exceptions
 3) File exception handling (missing file, bad data, etc.)
 """
 
+# x = "ten"
+# x_int = int(x)
 
 
 """ 
@@ -44,6 +46,54 @@ Exception Types:
     - FileNotFoundError
     - etc
 """
+
+
+x = 10
+y = 0
+try:
+    print("about to divide...")
+    z = x/y
+    print(f"result: {z}")
+except Exception:
+    print("caught zero division error")
+
+print("program continues")
+
+
+user_number = None
+result = -1
+try:
+    user_number = int(input("Enter a whole number: "))
+    result = 10 / user_number
+    print(abc)
+except ValueError as err:
+    print("Not a valid number")
+except ZeroDivisionError:
+    print("Not a valid denominator")
+except Exception as err:
+    print("Other error occurred")
+
+
+print(f"User num is current = {user_number}")
+print(result)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 """
 =========== Files ===========
