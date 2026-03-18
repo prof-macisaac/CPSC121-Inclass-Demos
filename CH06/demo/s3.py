@@ -19,6 +19,12 @@ instead of just crashing the program!
 This gives us more control of how our program runs
 and makes it more durable (less prone to crash)
 """
+x = 10
+y = 0
+# print(x/y)
+
+# user_num = int(input("Enter a number: "))
+
 
 """
 Formats:
@@ -45,6 +51,60 @@ Exception Types:
     - etc
 """
 
+x = 10
+y = 0
+error_occur = False
+try:
+    print("About to divide...")
+    # y = int(input("Give a denominator"))
+    result = x/y
+    print(f"Result {result}")
+    print(abc)
+except ZeroDivisionError:
+    print("Cannot divide by zero!!")
+    error_occur = True
+except ValueError:
+    print("That is not a valid integer")
+    error_occur = True
+except Exception as error_var:
+    print(error_var)
+    print("Unknown error occurred")
+
+print("Program continues")
+
+def int_input(prompt, error_msg = "Not a valid integer"):
+    while True:
+        try:
+            user_val = input(prompt)
+            num = int(user_val)
+            return num
+        except ValueError:
+            print(error_msg)
+# x = int_input("Give an integer: ")
+# print(x)
+
+def float_input(prompt, error_msg = "Not a valid floating point number"):
+    while True:
+        num = None
+        try:
+            num = float(input(prompt))
+        except ValueError:
+            print(error_msg)
+
+        if num != None:
+            return num
+
+# float_val_from_user = float_input("Enter a floating point number")
+# float_val_from_user2 = float_input("Enter a floating point number", "that is not the correct floating point number format")
+
+def safe_division(num, denom, error_val = 0):
+    try:
+        result = num/denom
+        return result
+    except:
+        return error_val
+    
+print(safe_division(10,1))
 """
 =========== Files ===========
 Concept: programs can save data to a file (write) and load it later (read)
@@ -66,6 +126,14 @@ This will create the file if it doesn't exist.
 If it DOES exist, it will erase it and start over. 
 (Just by opening with "w" mode, will erase the content)
 """
+outfile = open("demo_nums.txt", "w")
+outfile.write("10\n")
+outfile.write("20\n")
+outfile.write("hello\n")
+outfile.write("30\n")
+
+outfile.close()
+
 
 """
 IMPORTANT IDEA: What is out_file?
@@ -106,10 +174,38 @@ variable = file object
 file_object.method() → tells the file to do something
 """
 
+outfile = open("demo_nums.txt", "a")
+outfile.write("40\n")
+outfile.close()
 
 
+# Reading a whole file at once!
+# .read()
+
+infile = open("demo_nums.txt", "r")
+content = infile.read()
+infile.close()
+
+print(content)
+print(repr(content))
 
 
+# reading one line at a time
+# .readline()
+infile = open("demo_nums.txt", "r")
+
+line1 = infile.readline()
+line2 = infile.readline()
+
+infile.close()
+print(line1)
+print(line2)
+
+print(repr(line1))
+print(repr(line2))
+
+line1 = line1.strip()
+print(repr(line1))
 
 """
 --- Looping over a file (for line in file) ---
@@ -119,7 +215,15 @@ Each 'line' is text.
 BUT: int(...) can convert lines like "10\\n" because it ignores whitespace/newlines.
 So we can do numeric processing without teaching string methods.
 """
+total = 0
+infile = open("demo_nums.txt", "r")
 
+# for line in infile:
+#     print(line)
+#     total += int(line)
+
+print(total)
+infile.close()
 
 
 
@@ -128,7 +232,8 @@ So we can do numeric processing without teaching string methods.
 The 'with' statement automatically closes the file for you.
 This is safer because the file still closes even if an error happens.
 """
-
+with open("demo_nums.txt", "r") as infile:
+    print(infile.readline())
 
 
 """
@@ -144,15 +249,28 @@ Two common problems when using files:
 
 Goal: prevent our program from crashing and handle the problem gracefully.
 """
-
+try:
+    infile = open("doesn't exist.txt", "r")
+    print(infile.read())
+except FileNotFoundError:
+    print("that file does not exist!")
 
 """
 --- Handling a missing file (FileNotFoundError) ---
 If the file doesn't exist, open(...) crashes.
 So we wrap it in a try/except.
 """
+total = 0
+try:
+    with open("demo_nums.txt", "r") as infile:
+        for line in infile:
+            line_strip = line.strip()
+            print(line_strip)
+            total += int(line_strip)
+except ValueError:
+    print("caught error while reading file")
 
-
+print(total)
 
 
 """

@@ -63,7 +63,7 @@ print("program continues")
 user_number = None
 result = -1
 try:
-    user_number = int(input("Enter a whole number: "))
+    # user_number = int(input("Enter a whole number: "))
     result = 10 / user_number
     print(abc)
 except ValueError as err:
@@ -78,9 +78,36 @@ print(f"User num is current = {user_number}")
 print(result)
 
 
+def int_input(prompt, error_msg = "Not a valid integer"):
+    while True:
+        try:
+            num = int(input(prompt))
+            return num
+        except ValueError:
+            print(error_msg)
+# x = int_input("Give an integer: ")
+# print(x)
 
+def float_input(prompt, error_msg = "Not a valid floating point number"):
+    while True:
+        try:
+            num = float(input(prompt))
+            break
+        except ValueError:
+            print(error_msg)
+    return num
 
+# float_val_from_user = float_input("Enter a floating point number")
+# float_val_from_user2 = float_input("Enter a floating point number", "that is not the correct floating point number format")
 
+def safe_division(num, denom, error_val = 0):
+    try:
+        result = num/denom
+        return result
+    except:
+        return error_val
+    
+print(safe_division(10,0, -5))
 
 
 
@@ -117,6 +144,12 @@ If it DOES exist, it will erase it and start over.
 (Just by opening with "w" mode, will erase the content)
 """
 
+out_file = open("demo_numbers.txt", "w")
+out_file.write("10\n")
+out_file.write("20\n")
+out_file.write("30\n")
+out_file.close()
+print(type(out_file))
 """
 IMPORTANT IDEA: What is out_file?
 
@@ -156,10 +189,34 @@ variable = file object
 file_object.method() → tells the file to do something
 """
 
+out_file = open("demo_numbers.txt", "a")
+out_file.write("40\n")
+out_file.close()
 
+# Reading a whole file at once
+# .read()
 
+in_file = open("demo_numbers.txt", "r")
 
+content = in_file.read()
+in_file.close()
+print(content)
+print(repr(content))
 
+# Read one line at a time
+# .readline()
+in_file = open("demo_numbers.txt", "r")
+line1 = in_file.readline()
+line2 = in_file.readline()
+
+in_file.close()
+print(line1)
+print(line2)
+print(repr(line1))
+print(repr(line2))
+
+line1 = line1.strip()
+print(repr(line1))
 
 """
 --- Looping over a file (for line in file) ---
@@ -170,7 +227,15 @@ BUT: int(...) can convert lines like "10\\n" because it ignores whitespace/newli
 So we can do numeric processing without teaching string methods.
 """
 
+in_file = open("demo_numbers.txt", "r")
 
+total = 0
+
+for line in in_file:
+    value = int(line)
+    total += value
+print(total)
+in_file.close()
 
 
 """
@@ -178,7 +243,9 @@ So we can do numeric processing without teaching string methods.
 The 'with' statement automatically closes the file for you.
 This is safer because the file still closes even if an error happens.
 """
-
+with open("demo_numbers.txt", "r") as f:
+    for line in f:
+        print(repr(line))
 
 
 """
@@ -194,7 +261,15 @@ Two common problems when using files:
 
 Goal: prevent our program from crashing and handle the problem gracefully.
 """
+f = None
+try:
+    f = open("this file does not exists.txt", "r")
+    
+except FileNotFoundError:
+    print("Could not find that file! Try again later.")
 
+if f != None:
+    data = f.read()
 
 """
 --- Handling a missing file (FileNotFoundError) ---
@@ -211,8 +286,25 @@ We'll create a file that has mostly numbers, but one "bad" line.
 Then we'll try to convert each line using int(...).
 When we hit the bad line, int(...) will cause a ValueError.
 """
+with open("demo_mixed.txt", "w") as f:
+    f.write("100\n")
+    f.write("200\n")
+    f.write("oops\n") # will cause error when we try to convert it
+    f.write("300\n")
 
-
+total = 0
+try:
+    with open("demo_mixed.txt", "r") as f:
+        for line in f:
+            try:
+                total += int(line)
+                print(line)
+            except ValueError:
+                print(f"Issue with converting {line} to an int")
+except FileNotFoundError:
+    print("File not error")
+    
+print(total)
 
 """
 --- Combining file errors + data errors ---

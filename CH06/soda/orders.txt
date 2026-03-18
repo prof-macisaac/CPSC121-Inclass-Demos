@@ -1,0 +1,10 @@
+Coke
+10
+Pepsi
+25
+Sprite
+15
+Root Beer
+20
+Pepsi
+100
