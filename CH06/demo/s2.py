@@ -292,17 +292,17 @@ with open("demo_mixed.txt", "w") as f:
     f.write("oops\n") # will cause error when we try to convert it
     f.write("300\n")
 
-total = 0
+total = 0 
 try:
     with open("demo_mixed.txt", "r") as f:
         for line in f:
+            print(f"adding {line.strip()}")
             try:
                 total += int(line)
-                print(line)
             except ValueError:
-                print(f"Issue with converting {line} to an int")
+                print(f"Issue with converting {line.strip()}")
 except FileNotFoundError:
-    print("File not error")
+    print("File Not Found!")
     
 print(total)
 
