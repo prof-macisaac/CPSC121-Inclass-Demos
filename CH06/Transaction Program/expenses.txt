@@ -1,0 +1,6 @@
+REI
+101.33
+Walmart
+22.56
+McDonalds
+12.11
