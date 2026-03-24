@@ -20,13 +20,18 @@ Lists can store:
 - numbers
 - strings
 - mixed data types
+- other lists!!
 """
-
+list_x = [1,2,3,"hello", "goodbye", True, None, 101.11, 33.11]
 
 # --- Mini Task ---
 # Create a list called favorite_foods with 3 foods in it.
-# Print the whole list.
 
+favorite_foods = ["Burger", "Sushi", "French Fries"]
+
+print(list_x)
+# Print the whole list.
+print(favorite_foods)
 
 """
 =========== Indexing ===========
@@ -37,24 +42,32 @@ Index starts at 0.
 [10, 20, 30, 40]
   0   1   2   3
 """
+print(list_x[3])
 
+x = list_x[1]
+x += 5
+print(x)
+print(list_x[1])
 
 
 # --- Mini Task ---
 # Print out your second favorite food from the foods list
-
+print(favorite_foods[1])
 
 """
 =========== len() Function ===========
 len(list) returns the number of elements
 """
-
-
+len_list = len(list_x)
+print(f"len: {len_list}")
 
 
 # --- Mini Task ---
 # Print the length of your favorite_foods list.
+print(len(favorite_foods))
 # Then print the last item of your favorite_foods list using the len() function
+len_fav_foods = len(favorite_foods)
+print(favorite_foods[len_fav_foods-1])
 
 
 """
@@ -62,12 +75,15 @@ len(list) returns the number of elements
 This means we can change elements.
 """
 
+list_x[0] = "hi"
+print(list_x)
 
 
 # --- Mini Task ---
 # Change one value in your favorite_foods list.
+favorite_foods[2] = "Pizza"
 # Then print the updated list.
-
+print(favorite_foods)
 
 """
 =========== List Methods ===========
@@ -77,11 +93,38 @@ Format:
 list_name.method()
 """
 
+list_x.append(5)
+list_x.append("gonzaga")
+print(list_x)
+
+list_y = ["cat", "dog", "frog", "cat"]
+
+# list_y.remove("")
+z = list_y.pop(3)
+print(z)
+
+print(list_y)
+
+# insert
+list_y.insert(1, "fish")
+print(list_y)
+
+# methods that reorder the list
+nums = [6,3,6,8,4,2,9]
+nums.sort()
+print(nums)
+
+nums.reverse()
+print(nums)
+
 # --- Mini Task ---
 # Edit your favorite_foods list
 # 1) append one item
+favorite_foods.append("French Fries")
 # 2) remove one item
+favorite_foods.remove("Burger")
 # 3) print the final list
+print(favorite_foods)
 
 
 """
@@ -89,12 +132,23 @@ list_name.method()
 We can loop through lists.
 
 Style 1:
-for item in list
+for item in list:
 
 Style 2:
 use an index variable
 """
 
+# For Each loop
+for animal in list_y:
+    print(animal)
+
+for i in range(len(list_y)):
+    print(i)
+    print(list_y[i])
+    if list_y[i] == "cat":
+        list_y[i] = "kitten"
+
+print(list_y)
 
 # --- Mini Task ---
 # use a for loop with indexing to print your favorite foods
@@ -103,19 +157,31 @@ use an index variable
 # 2. <Food 2>
 # 3. <Food 3> 
 # etc.
-
+for i in range(len(favorite_foods)):
+    print(f"{i + 1}. {favorite_foods[i]}")
 
 """
 =========== Built-in Functions ===========
 These work with numeric lists.
 """
 
+# sum
+
+print(sum(nums))
+print(max(nums))
+print(min(nums))
+
 
 # --- Mini Task ---
 # Make a list of 4 test scores.
 # Print the sum, min, max, and average.
 
+scores = [99, 85, 74, 88]
 
+print(f"sum: {sum(scores)}")
+print(f"low score: {min(scores)}")
+print(f"top score: {max(scores)}")
+print(f"avg: {sum(scores)/len(scores)}")
 """
 =========== Membership (in operator) ===========
 Check if an item exists in a list

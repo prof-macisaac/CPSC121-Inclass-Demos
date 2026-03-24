@@ -4,3 +4,9 @@ Walmart
 22.56
 McDonalds
 12.11
+REI
+102.54
+Walmart
+11.11
+REI
+12.34
