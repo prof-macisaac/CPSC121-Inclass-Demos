@@ -19,11 +19,19 @@ instead of just crashing the program!
 This gives us more control of how our program runs
 and makes it more durable (less prone to crash)
 """
-x = 10
-y = 0
-# print(x/y)
+# x = 10
+# y = 0
+# # print(x/y)
 
-# user_num = int(input("Enter a number: "))
+# try: 
+#     user_num = int(input("Enter a number: "))
+# except:
+#     user_num = 0
+
+# print(user_num)
+
+
+
 
 
 """
@@ -51,26 +59,29 @@ Exception Types:
     - etc
 """
 
-x = 10
-y = 0
-error_occur = False
-try:
-    print("About to divide...")
-    # y = int(input("Give a denominator"))
-    result = x/y
-    print(f"Result {result}")
-    print(abc)
-except ZeroDivisionError:
-    print("Cannot divide by zero!!")
-    error_occur = True
-except ValueError:
-    print("That is not a valid integer")
-    error_occur = True
-except Exception as error_var:
-    print(error_var)
-    print("Unknown error occurred")
+# x = 10
+# y = 0
+# error_occur = False
+# try:
+#     print("About to divide...")
+#     y = int(input("Give a denominator"))
+#     result = x/y
+#     print(f"Result {result}")
+# except ZeroDivisionError:
+#     print("Cannot divide by zero!!")
+#     error_occur = True
+# except ValueError:
+#     print("That is not a valid integer")
+#     error_occur = True
+# except:
+#     print("Unknown error occurred")
+#     error_occur = True
 
-print("Program continues")
+# if not error_occur:
+#     print("division successful!")
+
+
+# print("Program continues")
 
 def int_input(prompt, error_msg = "Not a valid integer"):
     while True:
@@ -80,6 +91,8 @@ def int_input(prompt, error_msg = "Not a valid integer"):
             return num
         except ValueError:
             print(error_msg)
+
+
 # x = int_input("Give an integer: ")
 # print(x)
 
@@ -104,7 +117,7 @@ def safe_division(num, denom, error_val = 0):
     except:
         return error_val
     
-print(safe_division(10,1))
+# print(safe_division(10, 0, -4))
 """
 =========== Files ===========
 Concept: programs can save data to a file (write) and load it later (read)
@@ -127,9 +140,9 @@ If it DOES exist, it will erase it and start over.
 (Just by opening with "w" mode, will erase the content)
 """
 outfile = open("demo_nums.txt", "w")
+
 outfile.write("10\n")
 outfile.write("20\n")
-outfile.write("hello\n")
 outfile.write("30\n")
 
 outfile.close()
@@ -175,12 +188,13 @@ file_object.method() → tells the file to do something
 """
 
 outfile = open("demo_nums.txt", "a")
+outfile.write("abc\n")
 outfile.write("40\n")
 outfile.close()
 
 
-# Reading a whole file at once!
-# .read()
+# # Reading a whole file at once!
+# # .read()
 
 infile = open("demo_nums.txt", "r")
 content = infile.read()
@@ -192,20 +206,28 @@ print(repr(content))
 
 # reading one line at a time
 # .readline()
-infile = open("demo_nums.txt", "r")
+# try:
+#     infile = open("demo_nums-4.txt", "r")
+# except FileNotFoundError:
+#     print("file does not exist")
+#     exit()
 
-line1 = infile.readline()
-line2 = infile.readline()
+# x = infile.readline()
+# y = infile.readline()
 
-infile.close()
-print(line1)
-print(line2)
+# infile.close()
+# print(x)
+# print(y)
 
-print(repr(line1))
-print(repr(line2))
+# print(repr(x))
+# print(repr(y))
 
-line1 = line1.strip()
-print(repr(line1))
+# x = x.strip()
+# y = y.strip()
+# print(repr(x))
+
+# print(x)
+# print(y)
 
 """
 --- Looping over a file (for line in file) ---
@@ -218,12 +240,16 @@ So we can do numeric processing without teaching string methods.
 total = 0
 infile = open("demo_nums.txt", "r")
 
-# for line in infile:
-#     print(line)
-#     total += int(line)
+for x in infile:
+    print(x.strip())
+    try:
+        total += int(x)
+    except ValueError:
+        print("skipping value")
 
 print(total)
 infile.close()
+
 
 
 
@@ -232,8 +258,8 @@ infile.close()
 The 'with' statement automatically closes the file for you.
 This is safer because the file still closes even if an error happens.
 """
-with open("demo_nums.txt", "r") as infile:
-    print(infile.readline())
+# with open("demo_nums.txt", "r") as infile:
+#     print(infile.readline())
 
 
 """
@@ -249,28 +275,28 @@ Two common problems when using files:
 
 Goal: prevent our program from crashing and handle the problem gracefully.
 """
-try:
-    infile = open("doesn't exist.txt", "r")
-    print(infile.read())
-except FileNotFoundError:
-    print("that file does not exist!")
+# try:
+#     infile = open("doesn't exist.txt", "r")
+#     print(infile.read())
+# except FileNotFoundError:
+#     print("that file does not exist!")
 
 """
 --- Handling a missing file (FileNotFoundError) ---
 If the file doesn't exist, open(...) crashes.
 So we wrap it in a try/except.
 """
-total = 0
-try:
-    with open("demo_nums.txt", "r") as infile:
-        for line in infile:
-            line_strip = line.strip()
-            print(line_strip)
-            total += int(line_strip)
-except ValueError:
-    print("caught error while reading file")
+# total = 0
+# try:
+#     with open("demo_nums.txt", "r") as infile:
+#         for line in infile:
+#             line_strip = line.strip()
+#             print(line_strip)
+#             total += int(line_strip)
+# except ValueError:
+#     print("caught error while reading file")
 
-print(total)
+# print(total)
 
 
 """
