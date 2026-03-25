@@ -188,10 +188,26 @@ print(f"avg score: {sum(scores)/len(scores)}")
 Check if an item exists in a list
 """
 
+if "Fish" in animals:
+    print("There is a fish!")
+print(list_x)
+print(1 in list_x)
+
 # --- Mini Task ---
 # Take some user input that asks what the user's favorite food is.
 # Then print out whether you like that food as well or if you don't using membership with you favorite_foods list
 
+
+
+"""
+Concatenating Lists
+"""
+list_a = [1,2,3]
+list_b = [4,5,6]
+list_c = list_a + list_b
+print(list_a)
+print(list_b)
+print(list_c)
 
 """
 =========== Copying a List ===========
@@ -201,6 +217,35 @@ list2 = list1
 
 Both variables refer to the SAME list.
 """
+
+# behavior for immutable objects( strings, int, floats, bools)
+x = 5
+y = x
+
+x = 4
+print(x, y)
+
+# behavior for mutable objects (lists)
+list_1 = [1,2,3]
+list_2 = list_1
+
+print(f"1: {list_1}")
+print(f"2: {list_2}")
+
+list_3 = []
+for item in list_1:
+    list_3.append(item)
+
+list_1[1] = 555
+list_4 = list_1 + []
+list_1[0]= 777
+print(f"1: {list_1}")
+print(f"2: {list_2}")
+print(f"3: {list_3}")
+print(f"4: {list_4}")
+
+
+
 
 
 # --- Mini Task ---

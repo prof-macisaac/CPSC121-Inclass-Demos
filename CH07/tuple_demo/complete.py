@@ -18,39 +18,26 @@ Format:
 tuple_name = (item1, item2, item3)
 """
 
-# --- Mini Task ---
-# Create a tuple called days with 3 days of the week.
-# Print the whole tuple.
-
 
 """
 =========== Tuple Indexing ===========
 Just like lists, tuples use indexes.
 """
 
-# --- Mini Task ---
-# Print the first and second values from your days tuple.
-
 
 """
 =========== len() with Tuples ===========
 Many list operations work with tuples too.
+
+Other functions work aswell! min(), max(), sum()
 """
 
-
-# --- Mini Task ---
-# Create a tuple of 4 numbers.
-# Print its length, min, and max.
 
 
 """
 =========== Tuple Iteration ===========
 We can loop through tuples too.
 """
-
-
-# --- Mini Task ---
-# Write an index-based loop for your days tuple.
 
 
 """
@@ -73,11 +60,6 @@ The following would cause an error if uncommented.
 1) They are safer when data should not change
 2) They are often used for fixed collections of values
 """
-
-
-# --- Mini Task ---
-# Make a tuple called location with two numbers.
-# Print each value separately using indexes.
 
 
 """

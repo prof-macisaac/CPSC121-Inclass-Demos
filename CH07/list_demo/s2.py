@@ -186,6 +186,10 @@ print(f"avg: {sum(scores)/len(scores)}")
 =========== Membership (in operator) ===========
 Check if an item exists in a list
 """
+if "fish" in list_y:
+    print("theres a fish!")
+
+print("kitte" in list_y)
 
 # --- Mini Task ---
 # Take some user input that asks what the user's favorite food is.
@@ -200,10 +204,47 @@ list2 = list1
 
 Both variables refer to the SAME list.
 """
+x = 5
+y = x
 
+x = 4
+print(x,y)
+
+list_a = [1,2,3]
+list_b = list_a
+
+list_b[0] = 100
+
+print(list_a)
+print(list_b)
+
+list_c = []
+for item in list_a:
+    list_c.append(item)
+
+list_c[0] = 200
+print(list_a)
+print(list_b)
+print(list_c)
+
+
+
+list_1 = [1,2,3]
+list_2 = list_1
+list_1 = []
+print("1",list_1)
+print("2", list_2)
 
 # --- Mini Task ---
 # Create a list called nums1 with 3 numbers.
 # Make nums2 = nums1
 # Change one value in nums2
 # Print both lists and see what happens.
+
+list_c = list_a + list_b
+print(list_c)
+list_c = list_a + []
+st = "Last updated: 11/21/2025"
+parts = st.split(":")
+print(parts)
+print(parts[1])
