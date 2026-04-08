@@ -115,3 +115,68 @@ def main():
 
 
 main()
+
+
+"""
+Objective: You are given the following list of exam grades, where each element is a tuple containing a student's name and score:
+
+exam_grades = [
+    ('Aya', 88),
+    ('Bo', 94),
+    ('Eli', 73),
+    ('Fern', 91),
+    ('Gus', 85),
+    ('Jane', 90),
+    ('John', 42)
+]
+
+*copy and paste the code above into your program
+
+Write the Python code that does the following:
+
+    Remove Bo's exam record from the list.
+
+    Replace Fern's score with 85, keeping her record in the same position in the list. 
+
+    Calculate and display the average, minimum, and maximum exam scores.
+
+    Show the updated list and the summary statistics.
+"""
+
+exam_grades = [
+    ('Aya', 88),
+    ('Bo', 94),
+    ('Eli', 73),
+    ('Fern', 91),
+    ('Gus', 85),
+    ('Jane', 90),
+    ('John', 42)
+]
+
+# remove bo's score
+bo_index = None
+bo_entry = None
+
+for i in range(len(exam_grades)):
+    if exam_grades[i][0] == "Bo":
+        exam_grades.pop(i)
+        break
+        # bo_index = i
+        # bo_entry = exam_grades[i]
+# exam_grades.pop(bo_index)
+# exam_grades.reamove(bo_entry)
+print(exam_grades)
+
+fern_index = 2
+exam_grades[fern_index] = ("Fern", 85)
+print(exam_grades)
+
+
+min_val = None
+
+for exam_item in exam_grades:
+    score = exam_item[1]
+    if min_val == None or score < min_val:
+        min_val = score
+
+print(min_val)
