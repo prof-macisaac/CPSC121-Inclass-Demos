@@ -1,5 +1,6 @@
-# dicts_sets_demo.py
-# A single file that grows with the lecture.
+# this module overrides the print method
+# it makes it so that print statements are 
+# color coded for better readability
 from rich import print
 
 empty_dict = {}
