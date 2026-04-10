@@ -4,6 +4,8 @@ from rich import print
 
 empty_dict = {}
 
+# key-value pairs
+# key but immutable data type: string, int, float, bool, tuple
 grades = {"sara": 98, 
           "john": 74, 
           "sierra": 83}
@@ -55,8 +57,9 @@ print(ok)
 
 # # # TODO (Mini-Challenge C):
 # # # Create courses_by_student mapping name -> list of 2 courses.
-
 # # # Append a course for one student and print it.
+
+
 courses_by_student = {
     "john": ["CPSC121", "LIT101"],
     "dom":["CPSC222", "CPSC122"]}
@@ -123,8 +126,23 @@ print(x)
 
 
 
+"""
+Task 1 --------------
+Given:
 
+    scores = {"Alice": 85, "Bob": 92, "Charlie": 88}
 
+Find the student with the highest score.
+
+Task 2 --------------
+Combine:
+    store1 = {"apple": 5, "banana": 3}
+    store2 = {"banana": 4, "orange": 2}
+
+Result:
+    {"apple": 5, "banana": 7, "orange": 2}
+
+"""
 # """
 # SETS!
 # like lists but only unique items
