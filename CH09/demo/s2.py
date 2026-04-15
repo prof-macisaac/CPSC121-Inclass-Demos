@@ -88,7 +88,82 @@ print(courses)
 
 # example
 # tim is taking ["CPSC121", "LIT101", "RELI203"]
+for student_info in courses:
+    # print(student_info)
+    student_name = student_info[0]
+    # print(student_name)
+    classes = student_info[1]
+    # print(classes)
+    print(f"{student_name} is taking {classes}")
 
 
 
-# GO OVER ANSWER TO TASK (MONDAY)
+def update_dict(d, key, new_value):
+    d[key] = new_value
+
+x = {1:"abc"}
+update_dict(x, 1, "def")
+print(x)
+key = 2
+if key in x:
+    x.pop(key)
+# val = x.pop(1, None)
+print(x)
+# print(val)
+
+
+# sets - like lists but only unique items
+# - Ordering does not matter!
+
+s = set([1,2,3,4])
+print(s)
+
+s.add("s")
+print(s)
+s.add("s")
+print(s)
+
+s.remove("s")
+print(s)
+s.add("s")
+s.add("as")
+
+for x in s:
+    print(x)
+
+if "s" in x:
+    print("item found")
+
+
+# Task 1:
+scores = {"Alice": 85, "Bob": 92, "Charlie": 88}
+# Find the student with the highest score and print out their name and score
+max_score = -1
+max_stud = ""
+for student in scores:
+    if scores[student] > max_score:
+        max_score = scores[student]
+        max_stud = student
+
+print(f"{max_stud} got the high score of {max_score}")
+# Task 2
+# Combine:
+store_1 = {"apples": 5, "bananas": 3}
+store_2 = {"bananas": 4, "oranges": 2}
+
+# Result:
+grocery_items = {"apples": 5, "bananas": 7, "oranges": 2}
+
+
+gi = {}
+for key in store_1:
+    gi[key] = store_1[key]
+print(gi)
+
+for key in store_2:
+    if key in gi:
+        gi[key] = gi[key] + store_2[key]
+    else:
+        gi[key] = store_2[key]
+
+print(gi)

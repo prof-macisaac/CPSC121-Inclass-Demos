@@ -115,15 +115,6 @@ print("removed sam:",
 # # # Print "name has score X" for each (name,score) using items().
 
 
-def update_dict(d, name, scores):
-    d[name] = scores
-
-x = {}
-update_dict(x, "k", [1,2,3])
-print(x)
-
-
-
 
 
 
