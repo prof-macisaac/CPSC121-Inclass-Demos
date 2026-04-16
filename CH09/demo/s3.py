@@ -147,9 +147,18 @@ else:
 # Task 1
 scores = {"Alice": 85, "Bob": 92, "Charlie": 88}
 # Find the student with the highest score and print out their name and the score
+
+max_score = -1
+max_stud = ""
 for key in scores:
-    print(key)
-    print(scores[key])
+    # print(key)
+    # print(scores[key])
+    stud_score = scores[key]
+    if stud_score > max_score:
+        max_score = stud_score
+        max_stud = key
+print(f"{max_stud} had the highest score of {max_score}")
+
 # Task 2
 # Combine
 store_1 = {"apples": 5, "bananas": 3}
@@ -157,3 +166,17 @@ store_2 = {"bananas": 4, "oranges": 2}
 
 # Result:
 grocery_items = {"apples": 5, "bananas": 7, "oranges": 2}
+
+gi = {}
+for key_fruit in store_1:
+    gi[key_fruit] = store_1[key_fruit]
+print(gi)
+
+for key_fruit in store_2:
+    if key_fruit in gi: # update if the key already exists
+        gi[key_fruit] = gi[key_fruit] + store_2[key_fruit]
+    else: # add the key-value pair if it doesn't exists yet
+        gi[key_fruit] = store_2[key_fruit]
+
+print(gi)
+
