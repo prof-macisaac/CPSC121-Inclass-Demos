@@ -60,4 +60,4 @@ def fact(num):
 
         return num * fact_return
 
-# print(fact(5))
+print(fact(3))

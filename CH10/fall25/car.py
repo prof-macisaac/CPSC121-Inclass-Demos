@@ -1,4 +1,8 @@
+name = "ada"
+name = name.upper()
 
+nums = [2,4]
+nums.append(6)
 class Car:
     def __init__(self, x, year, miles=0):
         self.__brand = x
@@ -30,3 +34,5 @@ def main():
     toyota.miles = 0
 
 main()
+
+
