@@ -1,15 +1,4 @@
 
-students = {"john": 
-                {"year": "sophomore",
-                 "courses":[
-                     ("CPSC121", 95),
-                     ("CPSC122", 88)
-                    ]
-                }
-            }
-
-
-
 class Car():
     def __init__(self, brand, year, miles):
         self.brand = brand
