@@ -14,7 +14,6 @@ class BankAccount:
     def get_balance(self):
         return self.__balance
     
-    
 
     def __str__(self):
         # tells Python how to turn an object into a readable string.
